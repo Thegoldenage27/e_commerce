@@ -17,4 +17,4 @@ try{
 }
 
     
-    $URL = "http://localhost/SistemadeVentas";
+    $URL = "http://localhost/e_commerce";

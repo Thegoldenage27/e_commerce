@@ -18,4 +18,10 @@ if($contador == 0){
     echo "Datos incorrectos, por favor vuelve a intentarlo";
 }else{
     echo "Datos correctos";
+
+    //crear sesiones del usuario
+
+session_start();
+$_SESSION['sesion_email']= $email;
+header('Location: '.$URL.'/index.php');
 }
