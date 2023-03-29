@@ -13,10 +13,35 @@
   <link rel="stylesheet" href="../public/templeates/AdminLTE-3.2.0/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../public/templeates/AdminLTE-3.2.0/dist/css/adminlte.min.css">
+  <!-- Libreria de Sweet Alert 2-->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
   <!-- /.login-logo -->
+
+  <?php
+  session_start();
+  if(isset($_SESSION['mensaje'])){
+    $respuesta = $_SESSION['mensaje'];?>
+
+    <script>
+
+          Swal.fire({
+            position: 'top-end',
+            icon: 'error',
+            title: '<?php echo $respuesta;?>',
+            showConfirmButton: false,
+            timer: 1500
+          })
+
+    </script>
+
+<?php
+
+  }
+  
+  ?>
  
     <img src="https://chet.com.ar/blog/wp-content/uploads/2019/08/Canales-de-venta.png" 
  alt=""style="display: block; margin: auto; max-width: 100%;">
