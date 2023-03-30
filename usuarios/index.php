@@ -65,23 +65,37 @@ unset($_SESSION['mensaje']);
               <!-- /.card-header -->
               <div class="card-body">
                 
-                <table id="example1" class="table table-bordered table-striped">
+
+                <table id="example1" class="table table-bordered table-striped table-hover">
                   <thead>
                   <tr>
                         <th><center>#ID</center></th>
                         <th><center>Nombres</center></th>
                         <th><center>Em@il</center></th>
+                        <th><center>Acciones</center></th>
                     </tr>
                   </thead>
                   <tbody>
                         <?php
                         $contador =0;
-                        foreach($usuarios_datos as $usuarios_dato){?>
+                        foreach($usuarios_datos as $usuarios_dato){
+                          $id_usuario = $usuarios_dato['id_cliente']; ?>
 
                           <tr>
                             <td><center><?php echo  $contador = $contador +1;?></center></td>
                             <td><center><?php echo  $usuarios_dato['nombre'];?></center></td>
                             <td><center><?php echo  $usuarios_dato['email'];?></center></td>
+                            
+                            <td>
+                                <center>
+                                <div class="btn-group">
+                                    <a href= "show.php?id=<?php echo $id_usuario; ?>" type="button" class="btn btn-info"><i class="fa fa-eye"></i> Mostrar</a>
+                                    <button type="button" class="btn btn-success"><i class="fa fa-edit"></i>Editar</button>
+                                    <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i>Borrar</button>
+                                </div>
+                                </center>
+                            </td>
+
                           </tr>      
 
                         <?php    
@@ -94,6 +108,7 @@ unset($_SESSION['mensaje']);
                         <th><center>#ID</center></th>
                         <th><center>Nombres</center></th>
                         <th><center>Em@il</center></th>
+                        <th><center>Acciones</center></th>
                     </tr>
                   </tfoot>
                 </table>
@@ -123,18 +138,57 @@ unset($_SESSION['mensaje']);
   <script>
   $(function () {
     $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+      /* cambio de idiomas de datatable */
+      "pageLength": 10,
+          language: {
+              "emptyTable": "No hay información",
+              "info": "Mostrando _START_ a _END_ de TOTAL Usuarios",
+              "infoEmpty": "Mostrando 0 of 0 Usuarios",
+              "infoFiltered": "(Filtrado de _MAX_ total Usuarios)",
+              "infoPostFix": "",
+              "thousands": ",",
+              "lengthMenu": "Mostrar _MENU_ usuarios",
+              "loadingRecords": "Cargando...",
+              "processing": "Procesando...",
+              "search": "Buscador:",
+              "zeroRecords": "Sin resultados encontrados",
+              "paginate": {
+                  "first": "Primero",
+                  "last": "Ultimo",
+                  "next": "Siguiente",
+                  "previous": "Anterior"
+              }
+             },
+      /* fin de idiomas */
+      "responsive": true, "lengthChange": true, "autoWidth": false,
+      buttons: [{
+    extend: 'collection',
+    text: "Reportes",
+    orientation: 'landscape',
+    buttons: [{
+        text: 'Copiar',
+        extend: 'copy'
+    }, {
+        text: 'PDF',
+        extend: 'pdf'
+    }, {
+        text: 'CSV',
+        extend: 'csv'
+    }, {
+        text: 'Excel',
+        extend: 'excel'
+    }, {
+        text: 'Imprimir',
+        extend: 'print'
+    }]
+}, {
+    extend: 'colvis',
+    text: 'Visor de columnas',
+    collectionLayout: 'fixed three-column'
+}]
+
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
+    
   });
 </script>
 

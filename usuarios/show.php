@@ -2,6 +2,7 @@
 include ('../app/config.php');
 include ('../layout/sesion.php');
 include ('../layout/parte1.php');
+include ('../app/controllers/usuarios/show_user.php');
 
 
 ?>
@@ -43,29 +44,22 @@ include ('../layout/parte1.php');
               
                 <div class="row">
                   <div class="col-md-12">
-                    <form action="../app/controllers/usuarios/create.php" method="post">
+                    
                       <div class="form-group">
                         <label for="">Nombre</label>
-                        <input type="name" name="nombre" class="form-control" placeholder="Escribe el nombre del nuevo usuario">
+                        <input type="name" name="nombre" class="form-control" value="<?php echo $nombres;?>" disabled>
                       </div>
                       <div class="form-group">
                         <label for="">Email</label>
-                        <input type="email" name="email"class="form-control" placeholder="Escribe el email del nuevo usuario">
+                        <input type="email" name="email"class="form-control" value="<?php echo $email;?>" disabled>
                       </div>
-                      <div class="form-group">
-                        <label for="">Password</label>
-                        <input type="password" name="password_user"class="form-control" placeholder="Escribe el password del nuevo usuario">
-                      </div>
-                      <div class="form-group">
-                        <label for="">Confirme password</label>
-                        <input type="password" name="password_repeat" class="form-control" placeholder="Confirma el password del nuevo usuario">
-                      </div>   
+                      
                       <hr>
                       <div class="form-group">
-                        <a href="index.php" class="btn btn-secondary">Cancelar</a>
-                        <button tyoe="submit" class="btn btn-primary">Guardar</button>
+                        <a href="index.php" class="btn btn-secondary">Volver a listado de usuarios</a>
+                        
                       </div>
-                    </form>
+                    
                   </div>
                 </div>
 
@@ -83,4 +77,3 @@ include ('../layout/parte1.php');
 <!-- /.content-wrapper -->
 
 <?php include ('../layout/parte2.php'); ?>
- 
