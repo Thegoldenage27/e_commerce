@@ -5,9 +5,10 @@
       
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2023 <a href="https://adminlte.io">Molibyte.Corp.</a>.</strong> All rights reserved.
-  </footer>
-</div>
+    <strong>Copyright &copy; 2023 <a href="https://adminlte.io">Molibyte.Corp.</a>.
+    </strong> All rights reserved.
+</footer>
+
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->

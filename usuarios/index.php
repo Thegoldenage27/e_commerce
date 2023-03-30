@@ -28,8 +28,10 @@ include('../app/controllers/usuarios/listado_de_usuarios.php');?>
    
    <div class="row">
     <div class="col-md-12">
-    <div class="card card-info">
+    <div class="card card-dark">
+        
               <div class="card-header">
+              
                 <h3 class="card-title">Usuarios registrados</h3>
 
                 <div class="card-tools">

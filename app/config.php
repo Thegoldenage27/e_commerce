@@ -18,3 +18,6 @@ try{
 
     
     $URL = "http://localhost/e_commerce";
+
+    date_default_timezone_set("America/Mexico_City");
+    $fechaHora = date('Y-m-d H:i:s');
