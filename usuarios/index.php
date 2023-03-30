@@ -64,13 +64,16 @@ unset($_SESSION['mensaje']);
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table class="table table-bordered table-hover">
-                    <tr>
+                
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
                         <th><center>#ID</center></th>
                         <th><center>Nombres</center></th>
                         <th><center>Em@il</center></th>
                     </tr>
-                    <tbody>
+                  </thead>
+                  <tbody>
                         <?php
                         $contador =0;
                         foreach($usuarios_datos as $usuarios_dato){?>
@@ -85,7 +88,17 @@ unset($_SESSION['mensaje']);
                         }
                         ?>
                     </tbody>
+                  
+                  <tfoot>
+                  <tr>
+                        <th><center>#ID</center></th>
+                        <th><center>Nombres</center></th>
+                        <th><center>Em@il</center></th>
+                    </tr>
+                  </tfoot>
                 </table>
+
+
               </div>
               <!-- /.card-body -->
             </div>
@@ -102,4 +115,26 @@ unset($_SESSION['mensaje']);
   </div>
   <!-- /.content-wrapper -->
 
+  
+
   <?php include ('../layout/parte2.php'); ?>
+
+  
+  <script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
+
