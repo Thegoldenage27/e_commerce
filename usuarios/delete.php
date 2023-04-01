@@ -14,7 +14,7 @@ include ('../app/controllers/usuarios/show_user.php');
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-12">
-          <h1 class="m-0">Datos del usuario</h1>
+          <h1 class="m-0">Eliminar usuario</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           
@@ -29,9 +29,9 @@ include ('../app/controllers/usuarios/show_user.php');
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">
-          <div class="card card-info">
+          <div class="card card-danger">
             <div class="card-header">
-              <h3 class="card-title">Por favor revise que los datos sean correctos.</h3>
+              <h3 class="card-title">Advertencia: eliminar este usuario borrará todos sus registros de actividad y no podrán recuperarse. ¿Deseas continuar?   .</h3>
 
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
@@ -45,6 +45,9 @@ include ('../app/controllers/usuarios/show_user.php');
                 <div class="row">
                   <div class="col-md-12">
                     
+                  <form action="../app/controllers/usuarios/detele_user.php" method="post">
+
+                        <input type="text" name="id_cliente" value="<?php echo $id_usuario_get;?>" hidden>
                       <div class="form-group">
                         <label for="">Nombre</label>
                         <input type="name" name="nombre" class="form-control" value="<?php echo $nombres;?>" disabled>
@@ -57,8 +60,10 @@ include ('../app/controllers/usuarios/show_user.php');
                       <hr>
                       <div class="form-group">
                         <a href="index.php" class="btn btn-secondary">Volver a listado de usuarios</a>
+                        <button class="btn btn-danger">Eliminar</button>
                         
                       </div>
+                      </form>
                     
                   </div>
                 </div>

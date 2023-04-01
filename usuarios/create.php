@@ -46,19 +46,19 @@ include ('../layout/parte1.php');
                     <form action="../app/controllers/usuarios/create.php" method="post">
                       <div class="form-group">
                         <label for="">Nombre</label>
-                        <input type="name" name="nombre" class="form-control" placeholder="Escribe el nombre del nuevo usuario">
+                        <input type="name" name="nombre" class="form-control" placeholder="Escribe el nombre del nuevo usuario"required>
                       </div>
                       <div class="form-group">
                         <label for="">Email</label>
-                        <input type="email" name="email"class="form-control" placeholder="Escribe el email del nuevo usuario">
+                        <input type="email" name="email"class="form-control" placeholder="Escribe el email del nuevo usuario"required>
                       </div>
                       <div class="form-group">
                         <label for="">Password</label>
-                        <input type="password" name="password_user"class="form-control" placeholder="Escribe el password del nuevo usuario">
+                        <input type="password" name="password_user"class="form-control" placeholder="Escribe el password del nuevo usuario"required>
                       </div>
                       <div class="form-group">
                         <label for="">Confirme password</label>
-                        <input type="password" name="password_repeat" class="form-control" placeholder="Confirma el password del nuevo usuario">
+                        <input type="password" name="password_repeat" class="form-control" placeholder="Confirma el password del nuevo usuario"required>
                       </div>   
                       <hr>
                       <div class="form-group">

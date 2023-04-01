@@ -23,22 +23,4 @@ try{
     $fechaHora = date('Y-m-d H:i:s');
 
 
-    if(isset($_SESSION['mensaje'])){
-        $respuesta = $_SESSION['mensaje'];?>
-      <script>
-      
-      Swal.fire({
-        position: 'top-end',
-        icon: 'error',
-        title: '<?php echo $respuesta;?>',
-        showConfirmButton: false,
-        timer: 2000
-      })
-      
-      </script>
-      
-      <?php
-      
-      unset($_SESSION['mensaje']);
-      
-      }
+    

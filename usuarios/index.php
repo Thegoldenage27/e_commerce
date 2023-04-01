@@ -4,25 +4,7 @@ include ('../layout/sesion.php');
 include ('../layout/parte1.php');
 include('../app/controllers/usuarios/listado_de_usuarios.php');
 
-if(isset($_SESSION['mensaje'])){
-  $respuesta = $_SESSION['mensaje'];?>
-<script>
 
-Swal.fire({
-  position: 'top-end',
-  icon: 'success',
-  title: '<?php echo $respuesta;?>',
-  showConfirmButton: false,
-  timer: 2000
-})
-
-</script>
-
-<?php
-
-unset($_SESSION['mensaje']);
-
-}
 
 ?>
 
@@ -88,13 +70,14 @@ unset($_SESSION['mensaje']);
                             
                             <td>
                                 <center>
-                                <div class="btn-group">
-                                    <a href= "show.php?id=<?php echo $id_usuario; ?>" type="button" class="btn btn-info"><i class="fa fa-eye"></i> Mostrar</a>
-                                    <button type="button" class="btn btn-success"><i class="fa fa-edit"></i>Editar</button>
-                                    <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i>Borrar</button>
-                                </div>
+                                    <div class="btn-group">
+                                        <a href="show.php?id=<?php echo $id_usuario; ?>" type="button" class="btn btn-info"><i class="fa fa-eye"></i> Mostrar</a>
+                                        <a href="update.php?id=<?php echo $id_usuario; ?>"type="button" class="btn btn-success"><i class="fa fa-edit"></i>Editar</a>
+                                        <a href="delete.php?id=<?php echo $id_usuario; ?>" type="button"class="btn btn-danger"><i class="fa fa-trash"></i>Borrar</a>
+                                    </div>
                                 </center>
                             </td>
+
 
                           </tr>      
 
@@ -131,7 +114,7 @@ unset($_SESSION['mensaje']);
   <!-- /.content-wrapper -->
 
   
-
+  <?php include ('../layout/mensajes.php'); ?>
   <?php include ('../layout/parte2.php'); ?>
 
   
