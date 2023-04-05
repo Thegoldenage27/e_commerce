@@ -54,6 +54,7 @@ include('../app/controllers/usuarios/listado_de_usuarios.php');
                 <th><center>#ID</center></th>
                 <th><center>Nombres</center></th>
                 <th><center>Em@il</center></th>
+                <th><center>Rol de usuarios</center></th>
                 <th><center>Acciones</center></th>
               </tr>
             </thead>
@@ -65,8 +66,9 @@ include('../app/controllers/usuarios/listado_de_usuarios.php');
 
                     <tr>
                       <td><center><?php echo  $contador = $contador +1;?></center></td>
-                      <td><center><?php echo  $usuarios_dato['nombre'];?></center></td>
+                      <td><center><?php echo  $usuarios_dato['nombres'];?></center></td>
                       <td><center><?php echo  $usuarios_dato['email'];?></center></td>
+                      <td><center><?php echo  $usuarios_dato['rol'];?></center></td>
                       
                       <td>
                         <center>
@@ -91,6 +93,7 @@ include('../app/controllers/usuarios/listado_de_usuarios.php');
               <th><center>#ID</center></th>
               <th><center>Nombres</center></th>
               <th><center>Em@il</center></th>
+              <th><center>Rol de usuarios</center></th>
               <th><center>Acciones</center></th>
             </tr>
           </tfoot>

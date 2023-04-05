@@ -2,6 +2,7 @@
 include ('../app/config.php');
 include ('../layout/sesion.php');
 include ('../layout/parte1.php');
+include ('../app/controllers/roles/listado_de_roles.php')
 
 
 ?>
@@ -52,6 +53,18 @@ include ('../layout/parte1.php');
                         <label for="">Email</label>
                         <input type="email" name="email"class="form-control" placeholder="Escribe el email del nuevo usuario"required>
                       </div>
+                      <div class="form-group">
+                        <label for="">Rol de usuario</label>
+                        <select name="rol" id="" class="form-control">
+                          <?php 
+                          foreach($roles_datos as $roles_dato){?>
+                            <option value="<?php echo $roles_dato['id_rol'];?>"><?php echo $roles_dato['rol'];?></option>
+                          <?php
+                          }
+                          ?>
+                        </select>
+                      </div>
+
                       <div class="form-group">
                         <label for="">Password</label>
                         <input type="password" name="password_user"class="form-control" placeholder="Escribe el password del nuevo usuario"required>
