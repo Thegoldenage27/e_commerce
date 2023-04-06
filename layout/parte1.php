@@ -23,7 +23,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="<?php  echo $URL;?>/public/templeates/AdminLTE-3.2.0/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="<?php  echo $URL;?>/public/templeates/AdminLTE-3.2.0/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 
-
+  <!-- jQuery -->
+  <script src="<?php  echo $URL;?>/public/templeates/AdminLTE-3.2.0/plugins/jquery/jquery.min.js"></script>
 
 
 </head>
@@ -89,8 +90,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item">
-            <a href="#" class="nav-link active">
+
+ <!--******************************Usuarios************************************************* -->         
+           <li class="nav-item">
+           <a href="#" class="nav-link active" style="transition: all 0.3s ease-in-out;">
             <i class="nav-icon fas fa-users"></i>
               <p>
                 Usuarios
@@ -99,26 +102,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?php  echo $URL;?>/usuarios" class="nav-link active">
+              <a href="<?php echo $URL;?>/usuarios" class="nav-link active" style="transition: all 0.3s ease-in-out;">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Listado de usuarios</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php  echo $URL;?>/usuarios/create.php " class="nav-link active">
+              <a href="<?php echo $URL;?>/usuarios/create.php" class="nav-link active" style="transition: all 0.3s ease-in-out;">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Creacion de usuarios </p>
                 </a>
               </li>
             </ul>
           </li>
-
-
-
-
-
-
-
+<!--******************************Roles************************************************* -->
 
           <li class="nav-item">
             <a href="#" class="nav-link active">
@@ -144,7 +141,52 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </ul>
           </li>
 
+          <!--******************************Categorias************************************************* -->
 
+          <li class="nav-item">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-tags fa-beat"></i>
+              <p>
+                Categorias
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?php  echo $URL;?>/categorias" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Listado de categorias</p>
+                </a>
+              </li>
+              
+            </ul>
+          </li>
+
+<!--******************************Productos************************************************* -->
+
+<li class="nav-item">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-warehouse"></i>
+              <p>
+                Almacen
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?php  echo $URL;?>/almacen" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Listado de productos</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php  echo $URL;?>/almacen/create.php " class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Alta de productos </p>
+                </a>
+              </li>
+            </ul>
+          </li>
 
 
 
